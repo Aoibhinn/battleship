@@ -10,7 +10,7 @@ class Board:
     Has methods for adding ships and guesses and printing the board
     """
 
-    def ___init___(self, size, num_ships, name, type):
+    def __init__(self, size, num_ships, name, type):
         self.size = size
         self.board = [["." for x in range(size)] for y in range(size)]
         self.num_ships = num_ships
@@ -18,6 +18,10 @@ class Board:
         self.type = type
         self.guesses = []
         self.ships = []
+
+    def print(self):
+        for row in self.board:
+            print(" ".join(row))
 
 
 def new_game():

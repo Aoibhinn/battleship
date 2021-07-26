@@ -44,7 +44,8 @@ class Board:
 
     def random_point(self, size):
         """
-        Helper function to return a random integer between 0 and size of the board
+        Helper function to return a random integer between 0
+        and size of the board
         """
         return randint(0, size - 1)
 
@@ -94,13 +95,19 @@ def populate_board(board):
 
 
 def make_guess(board):
-    x = input("Guess a row: ")
-    y = input("Guess a col: ")
-    board.guess(int(x), int(y))
-    print(board.print())
+    while True:
+        try:
+            x = int(input("Guess a row: "))
+            y = int(input("Guess a col: "))
+        except ValueError:
+            print("Sorry, please enter a number")
+        else:
+            board.guess(int(x), int(y))
+            print(board.print())
 
 
 def play_game(computer_board, player_board):
     return True
+
 
 new_game()

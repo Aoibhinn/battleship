@@ -38,5 +38,8 @@ def new_game():
     player_name = input("Please enter your name: \n")
     print("-" * 35)
 
+    computer_board = Board(size, num_ships, "Computer", type="computer")
+    player_board = Board(size, num_ships, player_name, type="player")
+
 
 new_game()

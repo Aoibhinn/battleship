@@ -37,9 +37,16 @@ class Board:
         if len(self.ships) >= self.num_ships:
             print("Error: you cannot add any more ships!")
         else:
+            print("adding_ship " + str(x) + "," + str(y))
             self.ships.append((x, y))
             if self.type == "player":
                 self.board[x][y] = "@"
+
+    def random_point(self, size):
+        """
+        Helper function to return a random integer between 0 and size of the board
+        """
+        return randint(0, size - 1)
 
 
 def new_game():
@@ -67,5 +74,33 @@ def new_game():
         populate_board(player_board)
         populate_board(computer_board)
 
+    print(player_board.name)
+    print(player_board.print())
+    print(computer_board.name)
+    print(computer_board.print())
+
+    make_guess(computer_board)
+
+
+def validate_coordinates(self, x, y, board):
+    return True
+
+
+def populate_board(board):
+    type = board.type
+    x = board.random_point(board.size)
+    y = board.random_point(board.size)
+    board.add_ship(x, y, type)
+
+
+def make_guess(board):
+    x = input("Guess a row: ")
+    y = input("Guess a col: ")
+    board.guess(int(x), int(y))
+    print(board.print())
+
+
+def play_game(computer_board, player_board):
+    return True
 
 new_game()

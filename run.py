@@ -1,7 +1,5 @@
 from random import randint
 
-scores = {"computer": 0, "player": 0}
-
 
 class Board:
     """
@@ -37,7 +35,6 @@ class Board:
         if len(self.ships) >= self.num_ships:
             print("Error: you cannot add any more ships!")
         else:
-            print("adding_ship " + str(x) + "," + str(y))
             self.ships.append((x, y))
             if self.type == "player":
                 self.board[x][y] = "@"
@@ -52,14 +49,12 @@ class Board:
 
 def new_game():
     """
-    Starts a new game. Sets the board size and number of ships, resets the
-    scores and initialises the boards.
+    Starts a new game. Sets the board size and number of ships
+    and initialises the boards.
     """
 
     size = 5
     num_ships = 4
-    scores["computer"] = 0
-    scores["player"] = 0
     print("-" * 35)
     print("Welcome to ULTIMATE BATTLESHIPS!!")
     print(f"Board Size: {size}. Number of ships: {num_ships}")
@@ -80,30 +75,37 @@ def new_game():
     print(computer_board.name)
     print(computer_board.print())
 
-    make_guess(computer_board)
+    make_guess_player(computer_board)
+    validate_coordinates(make_guess_player)
 
 
 def validate_coordinates(self, x, y, board):
-    return True
+    if (self.board[x] < 0 or self.board[x] > 4) or (y < 0 or y > 4):
+        print("coordinates must be between 0 and 4")
 
 
 def populate_board(board):
     type = board.type
-    x = board.random_point(board.size)
-    y = board.random_point(board.size)
-    board.add_ship(x, y, type)
+    ship_row = board.random_point(board.size)
+    ship_col = board.random_point(board.size)
+    board.add_ship(ship_row, ship_col, type)
 
 
-def make_guess(board):
+def make_guess_player(board):
     while True:
         try:
             x = int(input("Guess a row: "))
             y = int(input("Guess a col: "))
         except ValueError:
-            print("Sorry, please enter a number")
+            print("Sorry, you must enter a number")
         else:
-            board.guess(int(x), int(y))
+            if (self.board[x] < 0 or self.board[x] > 4) or (y < 0 or y > 4):
+                print("coordinates must be between 0 and 4")
+                
+            board.guess(int(x), int(y),)
             print(board.print())
+            print(f"Player guessed: {x}, {y}")
+            print(board.guess(x, y))
 
 
 def play_game(computer_board, player_board):

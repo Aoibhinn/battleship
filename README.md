@@ -62,11 +62,11 @@ PEP8
 The project was deployed using Code Institute's mock terminal for Heroku. 
 
 Steps for deployment: 
-Fork or clone this repository
-Create a new Heroku app
-Set the Buildbacks to Python and NodeJS in that order 
-Link the Heroku app to the repository 
-Click on Deploy
+- Fork or clone this repository
+- Create a new Heroku app
+- Set the Buildbacks to Python and NodeJS in that order 
+- Link the Heroku app to the repository 
+- Click on Deploy
 
 ## Credits
 Code Institue for the deployment terminal 

@@ -16,7 +16,7 @@ The player can see where their ships are, indicated by an @ sign, but cannot see
 
 Guesses are marked on the board with an X. Hits are indicated by *.
 
-The player and the computer then take it in turns to make gusses and try to sing each other's battleships. 
+The player and the computer then take turns to make guesses and try to sing each other's battleships. 
 
 The winner is the player who sinks all of their opponent's battleships is first. 
 
@@ -25,21 +25,21 @@ The winner is the player who sinks all of their opponent's battleships is first.
 Existing Features
 
 - Random board generation
-- Ships are randomly plaed on both the player and computer boards
+- Ships are randomly placed on both the player and computer boards
 - The player cannot see where the computer's ships are
 
 - Play against the computer
 - Accepts user input
 
 - Input validation and error checking
-- You cannot enter coordinates outside the size of the grud
+- You cannot enter coordinates outside the size of the grid
 - You must enter numbers
 
 
 ## Data Model
 The game creates two instances of the Board class to hold the player's and computer's board. 
 
-The Board class stores the board size, the number of ships, the position of the ships, the gusses against that board and details such as board type (player's board or computer) and the player's name.
+The Board class stores the board size, the number of ships, the position of the ships, the guesses against that board and details such as board type (player's board or computer) and the player's name.
 
 The class also has methods to help play the game, such as a print method to print out the current board, an add_ships method to add ships to the board and an add_guess method to add a guess and return the result. 
 
@@ -50,9 +50,9 @@ I have manually tested the project by doing the following:
 - Tested in my local terminal and the Code Institute Heroku terminal. 
 
 ## Remaining Bugs
-- Computer board does not apper when player inputs their first guess row and column. Only the player can continue to guess against the computer board.
-- Game allows user to input the same coordinates twice.
-- Game doesn't end or give player the option to play again.
+- Computer board does not appear when the player inputs their first guess row and column. Only the player can continue to guess against the computer board.
+- Game allows the user to input the same coordinates twice.
+- Game doesn't end or give the player the option to play again.
 
 ## Validator Testing
 PEP8
@@ -69,5 +69,6 @@ Steps for deployment:
 - Click on Deploy
 
 ## Credits
-Code Institue for the deployment terminal 
-Wikipedia for details of the Battleships game
+- Code Institute for the deployment terminal 
+- Code Institute for inspiration for the game
+- Wikipedia for details of the Battleships game

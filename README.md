@@ -1,45 +1,73 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Aoibhinn,
+Ultimate Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Users can try and beat the computer by finding all of the computer's battleships before the computer finds theirs. Each 
+battleship occupies one square on the board.
 
-## Gitpod Reminders
+Here is the live version of my project <a href="https://aoibhinnbattleship.herokuapp.com/" 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## How to play
 
-`python3 -m http.server`
+Ultimate Battleships is based on the classic pen-and-paper game.
 
-A blue button should appear to click: *Make Public*,
+In this version, the player enters their name and two boards are randomly generated.
 
-Another blue button should appear to click: *Open Browser*.
+The player can see where their ships are, indicated by an @ sign, but cannot see where the computer's ships are. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Guesses are marked on the board with an X. Hits are indicated by *.
 
-A blue button should appear to click: *Make Public*,
+The player and the computer then take it in turns to make gusses and try to sing each other's battleships. 
 
-Another blue button should appear to click: *Open Browser*.
+The winner is the player who sinks all of their opponent's battleships is first. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features
 
-## Updates Since The Instructional Video
+Existing Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Random board generation
+- Ships are randomly plaed on both the player and computer boards
+- The player cannot see where the computer's ships are
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Play against the computer
+- Accepts user input
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Input validation and error checking
+- You cannot enter coordinates outside the size of the grud
+- You must enter numbers
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Data Model
+The game creates two instances of the Board class to hold the player's and computer's board. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The Board class stores the board size, the number of ships, the position of the ships, the gusses against that board and details such as board type (player's board or computer) and the player's name.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The class also has methods to help play the game, such as a print method to print out the current board, an add_ships method to add ships to the board and an add_guess method to add a guess and return the result. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing
+I have manually tested the project by doing the following: 
+- Passed the code through a PEP8 linter and confirmed there are no problems. 
+- Given invalid inputs: strings when numbers are expected and out of bounds input. 
+- Tested in my local terminal and the Code Institute Heroku terminal. 
 
---------
+## Remaining Bugs
+- Computer board does not apper when player inputs their first guess row and column. Only the player can continue to guess against the computer board.
+- Game allows user to input the same coordinates twice.
+- Game doesn't end or give player the option to play again.
 
-Happy coding!
+## Validator Testing
+PEP8
+- No errors were returned from PEP8online.com
+
+## Deployment
+The project was deployed using Code Institute's mock terminal for Heroku. 
+
+Steps for deployment: 
+Fork or clone this repository
+Create a new Heroku app
+Set the Buildbacks to Python and NodeJS in that order 
+Link the Heroku app to the repository 
+Click on Deploy
+
+## Credits
+Code Institue for the deployment terminal 
+Wikipedia for details of the Battleships game

@@ -76,12 +76,6 @@ def new_game():
     print(computer_board.print())
 
     make_guess_player(computer_board)
-    validate_coordinates(make_guess_player)
-
-
-def validate_coordinates(self, x, y, board):
-    if (self.board[x] < 0 or self.board[x] > 4) or (y < 0 or y > 4):
-        print("coordinates must be between 0 and 4")
 
 
 def populate_board(board):
@@ -98,14 +92,18 @@ def make_guess_player(board):
             y = int(input("Guess a col: "))
         except ValueError:
             print("Sorry, you must enter a number")
+            continue
+        if x not in range(0, 4) or y not in range(0, 4):
+            print("\nThe numbers must be between 1-4!")
         else:
-            if (self.board[x] < 0 or self.board[x] > 4) or (y < 0 or y > 4):
-                print("coordinates must be between 0 and 4")
-                
             board.guess(int(x), int(y),)
             print(board.print())
             print(f"Player guessed: {x}, {y}")
             print(board.guess(x, y))
+
+
+def validate_coordinates(self, x, y, board):
+    return True
 
 
 def play_game(computer_board, player_board):

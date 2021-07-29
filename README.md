@@ -4,7 +4,7 @@ Ultimate Battleships is a Python terminal game, which runs in the Code Institute
 Users can try and beat the computer by finding all of the computer's battleships before the computer finds theirs. Each 
 battleship occupies one square on the board.
 
-Here is the live version of my project <a href ="https://aoibhinnbattleship.herokuapp.com/" 
+Here is the live version of my project "https://aoibhinnbattleship.herokuapp.com/" 
 
 ## How to play
 

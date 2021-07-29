@@ -79,6 +79,9 @@ def new_game():
 
 
 def populate_board(board):
+    """
+    Board to be populated with ships at random points
+    """
     type = board.type
     ship_row = board.random_point(board.size)
     ship_col = board.random_point(board.size)
@@ -86,10 +89,17 @@ def populate_board(board):
 
 
 def make_guess_player(board):
+    """
+    Ask player to guess a row and a column on the board
+    If number is lower than 0 or larger than 4, error message will appear
+    If number is not an integer message to appear prompting user to
+    input a number
+    Add the players guesses to the board with the guess function
+    """
     while True:
         try:
-            x = int(input("Guess a row: "))
-            y = int(input("Guess a col: "))
+            x = int(input("Guess a row:\n "))
+            y = int(input("Guess a col:\n "))
         except ValueError:
             print("Sorry, you must enter a number")
             continue
@@ -100,10 +110,6 @@ def make_guess_player(board):
             print(board.print())
             print(f"Player guessed: {x}, {y}")
             print(board.guess(x, y))
-
-
-def validate_coordinates(self, x, y, board):
-    return True
 
 
 def play_game(computer_board, player_board):
